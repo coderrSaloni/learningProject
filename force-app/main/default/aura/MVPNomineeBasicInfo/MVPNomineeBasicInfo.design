@@ -1,0 +1,9 @@
+<design:component>
+    <design:attribute name="title" label="Title of Component"/>
+    
+    <design:attribute name="header" label="Header"/>
+    
+    <design:attribute name="fieldSet" datasource="MVPNomineeBasicInfoField, MVPDetailedBasicInfoField" />
+    
+    <design:attribute name="column" label="columns"/>
+</design:component>

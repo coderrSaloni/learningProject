@@ -1,0 +1,28 @@
+<aura:component controller="SelfFeedbackHandler" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="feedbackList" type="List"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="displayFields" type="String[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card iconName="custom:custom48" title="Self Feedback">
+        <aura:set attribute="actions">
+			<lightning:buttonIcon iconName="utility:skip_forward" size="large"  onclick="{! c.handleClick }" alternativeText="Refresh" title="Refresh"/>
+        </aura:set>
+    	<div class="slds-p-left_large slds-p-right_medium">
+        	<lightning:accordion>
+            	<aura:iteration items="{!v.feedbackList}" var="feedback">
+                	<lightning:accordionSection name="feedback" label="{!feedback.Year__c}">
+                    	<lightning:recordForm
+                                              aura:id="{!feedback.Id}"
+                                              recordId="{!feedback.Id}"
+                                              objectApiName="Feedback__c"
+                                              fields="{!v.displayFields}"
+                                              columns="2"
+                                              mode="readonly" /> 
+                    </lightning:accordionSection>
+                </aura:iteration>
+            </lightning:accordion>
+        </div>
+    </lightning:card>
+</aura:component>

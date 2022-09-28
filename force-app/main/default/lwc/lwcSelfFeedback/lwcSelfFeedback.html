@@ -1,0 +1,43 @@
+<template>
+    <lightning-card icon-name="custom:custom48" title="Self Feedback LWC">
+        <!-- sldsValidatorIgnoreNextLine -->
+        <lightning-button-icon onclick={handleClick} alternative-text="Refresh" icon-name="action:refresh" slot="actions"></lightning-button-icon>
+        <!-- sldsValidatorIgnoreNextLine -->
+        <template if:true={feedbacks.data}>
+            <lightning-accordion>
+                <template for:each={feedbacks.data} for:item="feed">
+                    <lightning-accordion-section key={feed.Id} name="feed" label={feed.Year__c}>
+                        <lightning-record-form  id={feed.Id}
+                        record-id={feed.Id}
+                        object-api-name="Feedback__c"
+                        fields={fieldSetApiName.data}
+                        mode="FULL"
+                        columns="2"></lightning-record-form>
+                    </lightning-accordion-section>
+                </template>
+            </lightning-accordion>
+        </template>
+    </lightning-card>
+
+    <!-- testing -->
+    <!-- <template iterator:it={feedbacks.data}>
+        <p key={it.value.Id}>
+            {it.value.Id}
+        </p>
+    </template> -->
+
+    <!-- test if fields work or not  -->
+    <!-- <lightning-record-form  id=form
+                            record-id="a065j000006RASpAAO"
+                            object-api-name="Feedback__c"
+                            fields={fields}
+                            mode="FULL"
+                            columns="2"></lightning-record-form> -->
+
+    <!-- printing sObject List data  -->
+    <!-- <template iterator:it={feedbacks.data}>
+        <p key={it.value.Id}>
+            {it.value.Year__c}
+        </p>
+    </template> -->
+</template>

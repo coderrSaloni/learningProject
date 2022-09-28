@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">            
+            <objects>
+                <object>Designation__c</object>
+            </objects>
+            <property name="title" type="String" default="Basic Info LWC" label="Title of Component"/>
+            <property name="header" type="Boolean" default="true" label="Header"/>
+            <property name="fieldSet" label="Field Set" type="String" datasource="MVPNomineeBasicInfoField, MVPDetailedBasicInfoField" default="MVPNomineeBasicInfoField" />
+            <property name="column" type="String" default="2" label="Column"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

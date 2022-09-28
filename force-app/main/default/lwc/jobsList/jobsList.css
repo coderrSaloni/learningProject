@@ -1,0 +1,36 @@
+.list-first {
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+
+.list-last {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.table {
+    display:table;
+}
+.header {
+    display:table-header-group;
+    font-weight:bold;
+    font-size: large;
+}
+.rowGroup {
+    display:table-row-group;
+    font-size: medium;
+}
+.row {
+    display:table-row;
+}
+.cell {
+    display:table-cell;
+    width:10%;
+    padding: 5px;
+}
+.pick-list {
+    width: 50%;
+    padding: 5px;
+    border-color: aqua;
+    
+}

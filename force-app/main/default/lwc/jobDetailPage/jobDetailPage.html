@@ -1,0 +1,51 @@
+<template >
+    <lightning-card>
+        <template for:each={jobDetail} for:item="it">
+            <div class="slds-m-around_medium" key={it.Id}>
+                <H1 class="H1"><B>{it.Name}</B></H1><br>
+
+                <div class="table">
+                    <div class="rowGroup">
+                        <div class="cell"><a href={it.Company__r.recordUrl__c}>{it.Company__r.Name}</a></div>
+                        <div class="cell">{it.Job_Category__c}</div>
+                        <div class="cell">{it.Location__c}</div>
+                    </div>
+                </div>
+
+
+                <div class="list-first"></div><br>
+
+                <H1 style="font-size: x-large;"><B>DESCRIPTION</B></H1>
+                <P>{it.Job_Description__c}</P><br>
+
+                <H1 style="font-size: x-large;"><B>About Job</B></H1>
+                <P>{it.About_Job__c}</P><br>
+
+                <H1 style="font-size: x-large;"><B>Minimum Qualifications</B></H1>
+                <!-- Rich text field Display using this tag -->
+                <lightning-formatted-rich-text
+                    value={it.Qualification_Required__c}>
+                </lightning-formatted-rich-text>
+
+                <H1 style="font-size: x-large;"><B>Responsibilities</B></H1>
+                <!-- Rich text field Display using this tag -->
+                <lightning-formatted-rich-text
+                    value={it.Responsibilities__c}>
+                </lightning-formatted-rich-text>
+
+                <H1 style="font-size: x-large;"><B>Qualification Required</B></H1>
+                <!-- Rich text field Display using this tag -->
+                <lightning-formatted-rich-text
+                    value={it.Qualification_Required__c}>
+                </lightning-formatted-rich-text>
+
+                <p style="font-size: small;">
+                    We are committed to equality of opportunity for all; applications from individuals are encouraged regardless of age, disability, gender, gender reassignment, sexual orientation, pregnancy and maternity, race, religion or belief and marriage and civil partnerships.
+                </p>
+            </div>
+        </template>
+        <div class="slds-m-around_medium">
+            <a href={jobListUrl} style="font-size: medium;">&lt; Back to Current Openings</a><br>
+        </div>
+    </lightning-card>
+</template>

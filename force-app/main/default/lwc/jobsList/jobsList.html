@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Job Openings" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+
+            <H3>Filter Jobs By Company</H3>
+            <Select name="companies" id="companies" class="pick-list" onchange={HandleFilterChange}>
+                <option value='All'>All</option>
+                <template for:each={companiesRecords} for:item="it">
+                    <option value={it.Name} key={it.Id}>{it.Name}</option>
+                </template>
+            </Select>
+
+            <div class="list-first"></div>
+
+            <div class="table">
+                <div class="header">
+                    <div class="cell">Name</div>
+                    <div class="cell">Company Name</div> 
+                    <div class="cell">Location</div>
+                </div>
+
+                <!-- <template iterator:it={records}> -->
+                <template for:each={records} for:item="it">
+
+                    <div class="rowGroup" key={it.Id}>
+                        <div class="cell"><a href={it.CommunityUrl__c}>{it.Name}</a></div>
+                        <div class="cell">{it.Company__r.Name}</div>
+                        <div class="cell">{it.Location__c}</div>
+                    </div>
+
+                </template>
+            </div>
+            <div class="list-last"></div>
+        </div>
+    </lightning-card>
+</template>

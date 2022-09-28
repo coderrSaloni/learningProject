@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <template if:true={header}>
+            <lightning-card icon-name="standard:job_profile" title={title}>
+            </lightning-card>
+        </template>
+            <div class="slds-p-left_large slds-p-right_medium">
+                <lightning-record-form
+                id="form1"
+                record-id={contactId}
+                object-api-name="Contact"
+                fields={fieldsApiName.data}
+                columns={column}
+                mode="readonly"></lightning-record-form>
+            </div>
+    </lightning-card>
+</template>

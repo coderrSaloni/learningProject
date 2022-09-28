@@ -1,0 +1,13 @@
+.THIS.slds-card_boundary {
+    border: red;
+}/*
+.THIS .slds-card__header{
+        background-color: aliceblue;
+}*/
+.THIS .verticalCard__body{
+        background-color: #e0e0e0;
+}
+/*
+.THIS .slds-card__footer{
+        background-color: aquamarine;
+}*/

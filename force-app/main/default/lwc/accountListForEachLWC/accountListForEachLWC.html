@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Account List using for:each" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="acc">
+                    <p key={acc.Id}>{acc.Name}</p>
+                </template>
+            </template>
+            <template if:true={accounts.error}>
+                {accounts.error}
+            </template>
+        </div>
+    </lightning-card>
+    <lightning-card title="contributions List using for:each" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={contributions.data}>
+                <template for:each={contributions.data} for:item="con">
+                    <p key={contributions.Id}>{con.Year__c}</p>
+                </template>
+            </template>
+            <template if:true={contributions.error}>
+                {contributions.error}
+            </template>
+            <!-- printing list data  -->
+            {stringList.data}
+
+            <!-- printing sObject List data  -->
+            <template iterator:it={feedbacks.data}>
+                <p key={it.value.Id}>
+                    {it.value.Year__c}
+                </p>
+            </template>
+
+             <!-- printing FieldSet List data  -->
+             <template iterator:it={fieldSetApiName.data}>
+                <p key={it.value}>
+                    {it.value}
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

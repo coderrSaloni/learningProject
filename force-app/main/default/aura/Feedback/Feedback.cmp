@@ -1,0 +1,66 @@
+<aura:component controller="SelfFeedbackHandler" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="feedbackList" type="List"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="displayFields" type="String[]"/>
+    <aura:attribute name="verticalFields" type="String[]" default="['Expertise__c', 'Leadership__c', 'Generosity__c', 'Advocacy__c']"/>
+
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card iconName="custom:custom48" title="Feedback">
+        <aura:set attribute="actions">
+			<lightning:buttonIcon iconName="utility:skip_forward" size="large"  onclick="{! c.handleClick }" alternativeText="Refresh" title="Refresh"/>
+        </aura:set>
+        <div class="slds-p-left_large slds-p-right_medium">
+
+            <lightning:accordion>
+                <aura:iteration items="{!v.feedbackList}" var="feedback">
+                    <lightning:accordionSection name="feedback" label="{!feedback.Year__c}">
+                        <lightning:card  iconName="utility:list" title="Average" class="slds-text-heading_small slds-card_boundary verticalCard__body">
+                            <lightning:recordForm
+                                                  aura:id="{!feedback.Id}"
+                                                  recordId="{!feedback.Id}"
+                                                  objectApiName="Feedback__c"
+                                                  fields="{!v.displayFields}"
+                                                  columns="5"
+                                                  mode="readonly" /> 
+                        </lightning:card>
+                        <lightning:card class="slds-card_boundary border__card">
+                            
+                            <!-- try with record View Form -->
+                            <!-- 
+                            <lightning:recordViewForm recordId="{!feedback.Id}" objectApiName="Feedback__c">
+                            	<lightning:outputField fieldName="Nominator__c"/>
+                                <lightning:outputField fieldName="Feedback__c.Nominator__r.Email"/>
+                            </lightning:recordViewForm> -->
+                            
+                            <lightning:recordForm
+                                                  aura:id="{!feedback.Id}"
+                                                  recordId="{!feedback.Id}"
+                                                  objectApiName="Feedback__c"
+                                                  fields="Nominator__c"
+                                                  columns="5"
+                                                  mode="readonly" /> 
+                            <b>
+                                <lightning:recordForm
+                                                      aura:id="{!feedback.Id}"
+                                                      recordId="{!feedback.Id}"
+                                                      objectApiName="Feedback__c"
+                                                      fields="{!v.displayFields}"
+                                                      columns="5"
+                                                      mode="readonly" /> </b>
+                            <lightning:recordForm
+                                                  aura:id="{!feedback.Id}"
+                                                  recordId="{!feedback.Id}"
+                                                  objectApiName="Feedback__c"
+                                                  fields="{!v.verticalFields}"
+                                                  columns="1"
+                                                  mode="readonly" /> 
+                        </lightning:card>
+                    </lightning:accordionSection>
+                </aura:iteration>
+            </lightning:accordion>
+            
+        </div>
+    </lightning:card>
+</aura:component>

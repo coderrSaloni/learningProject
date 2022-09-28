@@ -1,0 +1,58 @@
+<aura:component controller="ContributionsHandler" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    
+    <aura:attribute name="conList" type="List"/>
+    <aura:attribute name="fields" type="String[]" default="['Date__c', 'Name']"/>
+    <aura:attribute name="year" type="List"/>
+    <aura:attribute name="recordId" type="Id" />
+    
+    <aura:attribute name="horizontalFields" type="String[]"/>
+    <aura:attribute name="verticalFields" type="String[]"/>
+    <aura:attribute name="detailFields" type="String[]"/>
+    
+    <!-- taking fieldset from admin default is API of fieldSet -->
+    <aura:attribute name="horizontalfieldSet" type="String" default="horizontalFields"/>
+    <!-- taking fieldset from admin default is API of fieldSet -->
+    <aura:attribute name="verticalfieldSet" type="String" default="verticalFields"/>
+    <!-- taking fieldset from admin default is API of fieldSet -->
+    <aura:attribute name="detailfieldSet" type="String" default="detailFields"/>
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card iconName="standard:visit_templates" title="Contributions">
+        <aura:set attribute="actions">
+			<lightning:buttonIcon iconName="utility:skip_forward" size="large"  onclick="{! c.handleClick }" alternativeText="Refresh" title="Refresh"/>
+        </aura:set>
+        
+        <div class="slds-p-left_large slds-p-right_medium"> 
+            <lightning:accordion>
+                <aura:iteration items="{!v.conList}" var="con">
+                    <lightning:accordionSection name="con" label="{!con.Year__c}">
+                        <lightning:recordForm
+                                              aura:id="{!con.Id}"
+                                              recordId="{!con.Id}"
+                                              objectApiName="Contribution__c"
+                                              fields="{!v.horizontalFields}"
+                                              columns="3"
+                                              mode="readonly" /> 
+                        <lightning:recordForm
+                                              aura:id="verticalFieldsForm"
+                                              recordId="{!con.Id}"
+                                              objectApiName="Contribution__c"
+                                              fields="{!v.verticalFields}"
+                                              columns="2"
+                                              mode="readonly" />
+                        <lightning:recordForm
+                                              aura:id="detailFieldsForm"
+                                              recordId="{!con.Id}"
+                                              objectApiName="Contribution__c"
+                                              fields="{!v.detailFields}"
+                                              columns="1"
+                                              mode="readonly"/>
+                    </lightning:accordionSection>
+                </aura:iteration>
+            </lightning:accordion>
+
+        </div>
+    </lightning:card>
+</aura:component>

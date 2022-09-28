@@ -1,0 +1,23 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <template for:each={records} for:item="company">
+        <div class="slds-p-left_large slds-p-right_medium" key={company.Id}>
+            <lightning-card variant="narrow">
+                <h3 slot="title">
+                    <img src={tvLogo} alt="lampIcon" class="customIcon">
+                    <a href={company.recordUrl__c}>{company.Name}</a> 
+                </h3>
+                <!-- <h1 slot="title">{company.Name}</h1> -->
+                <P>{company.About__c}</P>
+                <!-- <div slot="actions">
+                    <lightning-button-icon
+                        icon-name="utility:down"
+                    ></lightning-button-icon>
+                </div> -->
+                <!-- <div slot="footer">
+                    <h6>This is the footer</h6>
+                </div> -->
+            </lightning-card> <br>
+        </div>
+    </template>
+</template>

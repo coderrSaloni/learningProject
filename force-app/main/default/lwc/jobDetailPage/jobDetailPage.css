@@ -1,0 +1,19 @@
+.H1 {
+    font-size: xx-large;
+}
+.list-first {
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+.rowGroup {
+    display:table-row-group;
+    font-size: medium;
+}
+.table {
+    display:table;
+}
+.cell {
+    display:table-cell;
+    width:20%;
+    padding: 5px;
+}

@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Contributions LWC" icon-name="standard:visit_templates">
+        <!-- sldsValidatorIgnoreNextLine -->
+        <lightning-button-icon onclick={handleClick} alternative-text="Refresh" icon-name="action:refresh" slot="actions"></lightning-button-icon>
+        <div class="slds-p-left_large slds-p-right_medium">
+    
+            <template if:true={contributions.data}>
+                <lightning-accordion>
+                    <template for:each={contributions.data} for:item="con">
+                        <!-- <p key={con.Id}>{con.Id}</p> -->
+                        <lightning-accordion-section key={con.Id} name="con" label={con.Year__c}>
+                            <!-- horizontalFields -->
+                            <lightning-record-form  id={con.Id}
+                                                    record-id={con.Id}
+                                                    object-api-name="Contribution__c"
+                                                    fields={horizontalFields}
+                                                    columns="3"
+                                                    mode="readonly">
+                            </lightning-record-form>
+                            <!-- verticalFields -->
+                            <lightning-record-form  id={con.Id}
+                                                    record-id={con.Id}
+                                                    object-api-name="Contribution__c"
+                                                    fields={verticalFields}
+                                                    columns="2"
+                                                    mode="readonly">
+                            </lightning-record-form>
+                            <!-- detailFields -->
+                            <lightning-record-form  id={con.Id}
+                                                    record-id={con.Id}
+                                                    object-api-name="Contribution__c"
+                                                    fields={detailFields}
+                                                    columns="1"
+                                                    mode="readonly">
+                            </lightning-record-form>
+                        </lightning-accordion-section>
+
+                    </template>
+                </lightning-accordion>
+            </template>
+
+            <template if:true={contributions.error}>
+                {contributions.error}
+            </template>
+            <!-- testing field set working or not -->
+            <!-- {fieldSetNames} -->
+            <!-- <template iterator:it={fieldSetNames.data}>
+                <p key={it.value}>
+                    {it.value}
+                </p>
+            </template> -->
+        </div>
+    </lightning-card>
+</template>

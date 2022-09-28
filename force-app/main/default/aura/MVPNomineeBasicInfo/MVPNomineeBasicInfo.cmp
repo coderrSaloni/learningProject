@@ -1,0 +1,38 @@
+<aura:component controller="MVPNomineeBasicInfoHandler" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- Calling Handler -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!-- Create a fiedset to display no default value coz fatching it from handler-->
+    <aura:attribute name="mvpBasicFields" type="String[]"/>
+    
+    <!-- created a title attribute for title default is "Basic Info. " -->
+    <aura:attribute name="title" type="String" default="Basic Info."/>
+    
+    <!-- created a column type attribute -->
+    <aura:attribute name="column" type="String" default="2"/>
+    
+    <!-- taking fieldset from admin default is API of fieldSet -->
+    <aura:attribute name="fieldSet" type="String" default="MVPNomineeBasicInfoField"/>
+    
+    <!-- create attribute of Boolean type and set it to true -->
+    <aura:attribute name="header" type="Boolean" default="true"/>
+    
+    <lightning:card>
+        <!-- if header is true displaying title -->
+        <aura:if isTrue="{! v.header}">
+            <lightning:card iconName="standard:job_profile" title="{! v.title}">
+            </lightning:card>
+        </aura:if>
+        
+        <div class="slds-p-left_large slds-p-right_medium">            
+            <lightning:recordForm
+                                  aura:id="myRecordForm"
+                                  recordId="{!v.recordId}"
+                                  objectApiName="Contact" 
+                                  fields="{!v.mvpBasicFields}"
+                                  columns="{! v.column}"
+                                  mode="Full"
+                                  onsubmit="{!c.handleSubmit}" />
+        </div>
+    </lightning:card>
+</aura:component>
