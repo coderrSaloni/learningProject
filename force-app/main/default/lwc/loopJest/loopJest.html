@@ -1,0 +1,13 @@
+<template>
+    <div>
+        <h1>For each list</h1>
+        <ul class="forEachList">
+            <template for:each={userList} for:item="user">
+                <li key={user.Id}>{user.Name}</li>
+            </template>
+        </ul>
+    </div>
+    <div>
+        <h1>Iterator looping</h1>
+    </div>
+</template>
