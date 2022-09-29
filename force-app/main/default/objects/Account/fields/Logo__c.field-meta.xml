@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Logo</label>
     <length>100000</length>
-    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
     <type>Html</type>
     <visibleLines>25</visibleLines>
 </CustomField>

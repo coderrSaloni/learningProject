@@ -39,6 +39,11 @@
                 <default>false</default>
                 <label>IT Manager</label>
             </value>
+            <value>
+                <fullName>Customer Support</fullName>
+                <default>false</default>
+                <label>Customer Support</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
