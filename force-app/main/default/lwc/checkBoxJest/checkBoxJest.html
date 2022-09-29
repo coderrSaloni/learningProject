@@ -1,13 +1,16 @@
 <template>
-    <div>
+	<div>
+		<Label>Password</Label><br>
+		<input class="textBox" type="text" onchange={handelTextOnChange}></input>
+		<br>
 		<Input class="checkBox" type="checkbox" onchange={handelCheckboxOnchange}>Show Password</Input><br>
-        <div class="userInfo">
-            <template if:true={isVisible}>
-                My Password is Password
-            </template>
-            <template if:false={isVisible}>
-                My Password is ********
-            </template>
-        </div>
+		<div class="userInfo">
+			<template if:true={isVisible}>
+				My Password is {textInput}
+			</template>
+			<template if:false={isVisible}>
+				My Password is ********
+			</template>
+		</div>
 	</div>
 </template>

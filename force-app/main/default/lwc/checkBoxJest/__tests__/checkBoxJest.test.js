@@ -20,12 +20,22 @@ describe('c-check-box-jest', () => {
     it('Password checkbox Test With True', () => {
         const element = document.querySelector('c-check-box-jest');
         
+        // Set value in text Box
+        const textBoxValue = element.shadowRoot.querySelector(".textBox");
+        textBoxValue.value="test";
+        textBoxValue.dispatchEvent(new CustomEvent('change'));
+        
+        // Set true value in Checkbox
         const checkBoxValue = element.shadowRoot.querySelector(".checkBox");
         checkBoxValue.value=true;
         checkBoxValue.dispatchEvent(new CustomEvent('change'));
+
+        // Getting actual Result
         const passwordElement = element.shadowRoot.querySelector('.userInfo');
+
+        // assert using Promise
         return Promise.resolve().then(()=>{
-            expect(passwordElement.textContent).toBe('My Password is Password');
+            expect(passwordElement.textContent).toBe('My Password is test');
         })
 
     });
