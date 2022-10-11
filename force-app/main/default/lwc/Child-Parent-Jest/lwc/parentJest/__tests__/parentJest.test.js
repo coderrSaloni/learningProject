@@ -29,6 +29,6 @@ describe('c-parent-jest', () => {
         // Assert
         // const div = element.shadowRoot.querySelector('div');
         // We can't test Child Data here
-        expect(child.userdetail.Name).toBe('Prashant');
+        expect(child[0].userdetail.Name).toBe('Prashant');
     })
 });
