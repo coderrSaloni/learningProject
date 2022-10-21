@@ -31,12 +31,12 @@
         <connector>
             <targetReference>Get_Case_Number</targetReference>
         </connector>
-        <inputAssignments>
+        <!-- <inputAssignments>
             <field>Category__c</field>
             <value>
                 <stringValue>Other</stringValue>
             </value>
-        </inputAssignments>
+        </inputAssignments> -->
         <inputAssignments>
             <field>Description</field>
             <value>

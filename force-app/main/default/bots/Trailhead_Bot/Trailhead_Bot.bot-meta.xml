@@ -16,7 +16,6 @@
         </mlIntents>
         <name>Trailhead_Bot</name>
     </botMlDomain>
-    <botUser>prashant@infotech.com</botUser>
     <contextVariables>
         <dataType>Text</dataType>
         <developerName>ChatKey</developerName>
