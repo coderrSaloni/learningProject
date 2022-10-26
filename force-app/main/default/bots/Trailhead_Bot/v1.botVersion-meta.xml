@@ -3,6 +3,66 @@
     <fullName>v1</fullName>
     <botDialogs>
         <botSteps>
+            <botVariableOperation>
+                <botInvocation>
+                    <invocationActionName>Modified_Get_Pre_Chat_Form</invocationActionName>
+                    <invocationActionType>flow</invocationActionType>
+                    <invocationMappings>
+                        <parameterName>Routable_Id</parameterName>
+                        <type>Input</type>
+                        <variableName>RoutableId</variableName>
+                        <variableType>ContextVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Matched_Contact</parameterName>
+                        <type>Output</type>
+                        <variableName>Contact</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Company</parameterName>
+                        <type>Output</type>
+                        <variableName>companyName</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Email_Address</parameterName>
+                        <type>Output</type>
+                        <variableName>emailAddress</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>fullName</parameterName>
+                        <type>Output</type>
+                        <variableName>fullName</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Matched_Case</parameterName>
+                        <type>Output</type>
+                        <variableName>Case</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Matched_Lead</parameterName>
+                        <type>Output</type>
+                        <variableName>Lead</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Phone_Number</parameterName>
+                        <type>Output</type>
+                        <variableName>phoneNo</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                </botInvocation>
+                <type>Set</type>
+                <variableOperationIdentifier>e8d6a9f0-55f0-43cf-a05f-ed073fce5312</variableOperationIdentifier>
+            </botVariableOperation>
+            <stepIdentifier>96cde159-1eae-4d89-93c2-4323de29814b</stepIdentifier>
+            <type>VariableOperation</type>
+        </botSteps>
+        <botSteps>
             <botMessages>
                 <message>What can I help you with?</message>
                 <messageIdentifier>d3566512-fbdd-d632-4823-1a3fe45378ed</messageIdentifier>
@@ -34,6 +94,66 @@
         <showInFooterMenu>false</showInFooterMenu>
     </botDialogs>
     <botDialogs>
+        <botSteps>
+            <botVariableOperation>
+                <botInvocation>
+                    <invocationActionName>Modified_Get_Pre_Chat_Form</invocationActionName>
+                    <invocationActionType>flow</invocationActionType>
+                    <invocationMappings>
+                        <parameterName>Routable_Id</parameterName>
+                        <type>Input</type>
+                        <variableName>RoutableId</variableName>
+                        <variableType>ContextVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Matched_Contact</parameterName>
+                        <type>Output</type>
+                        <variableName>Contact</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Company</parameterName>
+                        <type>Output</type>
+                        <variableName>companyName</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Email_Address</parameterName>
+                        <type>Output</type>
+                        <variableName>emailAddress</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>fullName</parameterName>
+                        <type>Output</type>
+                        <variableName>fullName</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Matched_Case</parameterName>
+                        <type>Output</type>
+                        <variableName>Case</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Matched_Lead</parameterName>
+                        <type>Output</type>
+                        <variableName>Lead</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                    <invocationMappings>
+                        <parameterName>Phone_Number</parameterName>
+                        <type>Output</type>
+                        <variableName>phoneNo</variableName>
+                        <variableType>ConversationVariable</variableType>
+                    </invocationMappings>
+                </botInvocation>
+                <type>Set</type>
+                <variableOperationIdentifier>0d6c7a9e-23b0-4426-8884-6b90d42a1138</variableOperationIdentifier>
+            </botVariableOperation>
+            <stepIdentifier>43f487a2-74c0-4aa3-91c4-dad3343c30d5</stepIdentifier>
+            <type>VariableOperation</type>
+        </botSteps>
         <botSteps>
             <botMessages>
                 <message>Hi, I&apos;m Trailhead Bot. I&apos;m here to help with your Trailhead and Certification support questions. I&apos;m still in Beta and improving every day with interactions.</message>
@@ -861,6 +981,11 @@
         <label>Answer</label>
     </conversationVariables>
     <conversationVariables>
+        <dataType>Object</dataType>
+        <developerName>Case</developerName>
+        <label>Case</label>
+    </conversationVariables>
+    <conversationVariables>
         <dataType>Text</dataType>
         <developerName>caseDescription</developerName>
         <label>caseDescription</label>
@@ -887,6 +1012,16 @@
     </conversationVariables>
     <conversationVariables>
         <dataType>Text</dataType>
+        <developerName>companyName</developerName>
+        <label>companyName</label>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Object</dataType>
+        <developerName>Contact</developerName>
+        <label>Contact</label>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
         <developerName>emailAddress</developerName>
         <label>emailAddress</label>
     </conversationVariables>
@@ -894,6 +1029,16 @@
         <dataType>Text</dataType>
         <developerName>fullName</developerName>
         <label>fullName</label>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Object</dataType>
+        <developerName>Lead</developerName>
+        <label>Lead</label>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <developerName>phoneNo</developerName>
+        <label>phoneNo</label>
     </conversationVariables>
     <entryDialog>Welcome</entryDialog>
     <mainMenuDialog>Main_Menu</mainMenuDialog>
