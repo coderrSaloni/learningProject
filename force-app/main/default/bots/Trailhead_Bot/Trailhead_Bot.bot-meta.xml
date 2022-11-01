@@ -7,8 +7,64 @@
             <label>Complete a Challenge</label>
         </mlIntents>
         <mlIntents>
+            <developerName>createCase</developerName>
+            <label>Create Case</label>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>I have an issue</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>There is a problem with the product you sent me</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>I need to file a complaint</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>Will you help me report a problem with my service</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>I&apos;m having a problem with my service</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>I need to report an issue</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>file case</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>issue</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>report an issue</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>report case</utterance>
+            </mlIntentUtterances>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>rise case</utterance>
+            </mlIntentUtterances>
+        </mlIntents>
+        <mlIntents>
             <developerName>Main_Menu</developerName>
             <label>Main Menu</label>
+        </mlIntents>
+        <mlIntents>
+            <developerName>Trailhead</developerName>
+            <label>Trailhead</label>
+            <mlIntentUtterances>
+                <language>en_US</language>
+                <utterance>Trail</utterance>
+            </mlIntentUtterances>
         </mlIntents>
         <mlIntents>
             <developerName>Welcome</developerName>
